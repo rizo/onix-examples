@@ -1,0 +1,3 @@
+(executable
+  (name Main)
+  (libraries opam-core fmt onix))
