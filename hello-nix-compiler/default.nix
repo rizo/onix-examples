@@ -4,7 +4,12 @@ let
   ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_14;
   onix = import ./nix/onix.nix { inherit pkgs ocamlPackages; };
 in {
-  packages = onix.build { lockFile = ./onix-lock.nix; };
+  packages = onix.build {
+    lockFile = ./onix-lock.nix;
+    withTest = false;
+    withDoc = false;
+    withTools = false;
+  };
 
   lock = onix.lock {
     repoUrl =
@@ -12,3 +17,4 @@ in {
     resolutions = { ocaml-system = "4.14.0"; };
   };
 }
+
