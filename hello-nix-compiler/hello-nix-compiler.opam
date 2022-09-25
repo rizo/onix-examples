@@ -22,4 +22,5 @@ build: [
 ]
 depends: [
   "ocaml" {>= "4.08" & < "5.0"}
+  "fmt"
 ]
