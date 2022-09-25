@@ -1,6 +1,6 @@
 { pkgs, self, repo ? builtins.fetchGit {
   url = "https://github.com/ocaml/opam-repository.git";
-  rev = "d4eff0dc069a950dbebebcf7f800fc08d924682b";
+  rev = "52c72e08d7782967837955f1c50c330a6131721f";
 } }:
 {
   astring = {
@@ -331,26 +331,26 @@
   };
   ocamlformat = {
     name = "ocamlformat";
-    version = "0.22.4";
+    version = "0.21.0";
     src = pkgs.fetchurl {
-      url = "https://github.com/ocaml-ppx/ocamlformat/releases/download/0.22.4/ocamlformat-0.22.4.tbz";
-      sha256 = "eb54de2b81ac7cc2e68d81a7dc80b391a81b737fcfa3ef969ea91bdad6c9c060";
+      url = "https://github.com/ocaml-ppx/ocamlformat/releases/download/0.21.0/ocamlformat-0.21.0.tbz";
+      sha256 = "2a1817f6bc581ff0cce9f0aa9687b897b02726e2ab75749ee98d57637057332d";
     };
-    opam = "${repo}/packages/ocamlformat/ocamlformat.0.22.4/opam";
-    depends = with self; [ base cmdliner csexp dune dune-build-info either
-                           fix fpath menhir menhirLib menhirSdk ocaml
+    opam = "${repo}/packages/ocamlformat/ocamlformat.0.21.0/opam";
+    depends = with self; [ base cmdliner dune dune-build-info either fix
+                           fpath menhir menhirLib menhirSdk ocaml
                            ocaml-version ocp-indent odoc-parser re stdio
                            uuseg uutf ];
     buildDepends = with self; [ dune menhir ocaml ];
   };
   ocamlformat-rpc-lib = {
     name = "ocamlformat-rpc-lib";
-    version = "0.22.4";
+    version = "0.21.0";
     src = pkgs.fetchurl {
-      url = "https://github.com/ocaml-ppx/ocamlformat/releases/download/0.22.4/ocamlformat-0.22.4.tbz";
-      sha256 = "eb54de2b81ac7cc2e68d81a7dc80b391a81b737fcfa3ef969ea91bdad6c9c060";
+      url = "https://github.com/ocaml-ppx/ocamlformat/releases/download/0.21.0/ocamlformat-0.21.0.tbz";
+      sha256 = "2a1817f6bc581ff0cce9f0aa9687b897b02726e2ab75749ee98d57637057332d";
     };
-    opam = "${repo}/packages/ocamlformat-rpc-lib/ocamlformat-rpc-lib.0.22.4/opam";
+    opam = "${repo}/packages/ocamlformat-rpc-lib/ocamlformat-rpc-lib.0.21.0/opam";
     depends = with self; [ csexp dune ocaml ];
     buildDepends = with self; [ dune ocaml ];
   };
