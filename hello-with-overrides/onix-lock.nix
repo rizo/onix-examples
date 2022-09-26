@@ -37,11 +37,11 @@
                            (self.cmdliner or null) ];
     buildDepends = with self; [ ocaml ocamlbuild ocamlfind topkg ];
   };
-  hello = rec {
-    name = "hello";
+  hello-with-overrides = rec {
+    name = "hello-with-overrides";
     version = "root";
     src = pkgs.nix-gitignore.gitignoreSource [] ./.;
-    opam = "${src}/hello.opam";
+    opam = "${src}/hello-with-overrides.opam";
     depends = with self; [ fmt ocaml ];
     buildDepends = with self; [ dune ocaml ];
   };
