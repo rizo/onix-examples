@@ -1,6 +1,6 @@
 { pkgs, self, repo ? builtins.fetchGit {
   url = "https://github.com/ocaml/opam-repository.git";
-  rev = "52c72e08d7782967837955f1c50c330a6131721f";
+  rev = "f3dcd527e82e83facb92cd2727651938cb9fecf9";
 } }:
 {
   base-threads = {
@@ -15,12 +15,12 @@
   };
   dune = {
     name = "dune";
-    version = "3.2.0";
+    version = "3.4.1";
     src = pkgs.fetchurl {
-      url = "https://github.com/ocaml/dune/releases/download/3.2.0/chrome-trace-3.2.0.tbz";
-      sha256 = "bd1fbce6ae79ed1eb26fa89bb2e2e23978afceb3f53f5578cf1bdab08a1ad5bc";
+      url = "https://github.com/ocaml/dune/releases/download/3.4.1/dune-3.4.1.tbz";
+      sha256 = "299fa33cffc108cc26ff59d5fc9d09f6cb0ab3ac280bf23a0114cfdc0b40c6c5";
     };
-    opam = "${repo}/packages/dune/dune.3.2.0/opam";
+    opam = "${repo}/packages/dune/dune.3.4.1/opam";
     depends = with self; [ base-threads base-unix (self.ocaml or null)
                            (self.ocamlfind-secondary or null) ];
     buildDepends = with self; [ (self.ocaml or null) ];
@@ -80,12 +80,12 @@
   };
   ocamlfind = {
     name = "ocamlfind";
-    version = "1.9.3";
+    version = "1.9.5";
     src = pkgs.fetchurl {
-      url = "http://download.camlcity.org/download/findlib-1.9.3.tar.gz";
-      sha512 = "27cc4ce141576bf477fb9d61a82ad65f55478740eed59fb43f43edb794140829fd2ff89ad27d8a890cfc336b54c073a06de05b31100fc7c01cacbd7d88e928ea";
+      url = "http://download.camlcity.org/download/findlib-1.9.5.tar.gz";
+      sha512 = "03514c618a16b02889db997c6c4789b3436b3ad7d974348d2c6dea53eb78898ab285ce5f10297c074bab4fd2c82931a8b7c5c113b994447a44abb30fca74c715";
     };
-    opam = "${repo}/packages/ocamlfind/ocamlfind.1.9.3/opam";
+    opam = "${repo}/packages/ocamlfind/ocamlfind.1.9.5/opam";
     depends = with self; [ ocaml (self.graphics or null) ];
     buildDepends = with self; [ ocaml ];
   };

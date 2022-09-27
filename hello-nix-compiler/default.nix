@@ -8,7 +8,7 @@ in {
 
   lock = onix.lock {
     repoUrl =
-      "https://github.com/ocaml/opam-repository.git#52c72e08d7782967837955f1c50c330a6131721f";
+      "https://github.com/ocaml/opam-repository.git#f3dcd527e82e83facb92cd2727651938cb9fecf9";
     resolutions = { "ocaml-system" = "*"; };
   };
 }
