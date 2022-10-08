@@ -37,7 +37,7 @@
     version = "4.14.1+trunk";
     src = pkgs.fetchurl {
       url = "https://github.com/ocaml/ocaml/archive/4.14.tar.gz";
-      sha256 = "157xalr30gzpxf0j9j6q399v666nyl0fj86rwkag7bgbqcw5xadn";
+      sha256 = "1cyy2kg7lr0bb886vpsqizydh737h2gjlpgydb6gxrsx797jsw6k";
     };
     opam = "${repo}/packages/ocaml-variants/ocaml-variants.4.14.1+trunk/opam";
     depends = with self; [ (self.ocaml-option-32bit or null)

@@ -40,7 +40,7 @@
   hello = rec {
     name = "hello";
     version = "root";
-    src = pkgs.nix-gitignore.gitignoreSource [] ./.;
+    src = ./.;
     opam = "${src}/hello.opam";
     depends = with self; [ fmt ocaml ];
     buildDepends = with self; [ dune ocaml ];
