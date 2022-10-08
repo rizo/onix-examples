@@ -40,7 +40,7 @@
   hello-with-overrides = rec {
     name = "hello-with-overrides";
     version = "root";
-    src = pkgs.nix-gitignore.gitignoreSource [] ./.;
+    src = ./.;
     opam = "${src}/hello-with-overrides.opam";
     depends = with self; [ fmt ocaml ];
     buildDepends = with self; [ dune ocaml ];
