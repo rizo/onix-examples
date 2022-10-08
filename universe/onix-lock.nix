@@ -263,14 +263,6 @@
     depends = with self; [ ocaml ];
     buildDepends = with self; [ ocaml ];
   };
-  conf-binutils = {
-    name = "conf-binutils";
-    version = "0.3";
-    opam = "${repo}/packages/conf-binutils/conf-binutils.0.3/opam";
-    depends = with self; [ base-unix ocaml ];
-    buildDepends = with self; [ ocaml ];
-    depexts = with pkgs; [ binutils ];
-  };
   conf-libev = {
     name = "conf-libev";
     version = "4+12";
@@ -2093,10 +2085,10 @@
     version = "root";
     src = ./.;
     opam = "${src}/universe.opam";
-    depends = with self; [ alcotest benchmark caqti conf-binutils containers
-                           core_bench dream dune fmt gen irmin iter lwt
-                           mirage ocaml ocaml-lsp-server ocamlformat
-                           ocp-browser ppxlib ptime seq streaming utop yojson ];
+    depends = with self; [ alcotest benchmark caqti containers core_bench
+                           dream dune fmt gen irmin iter lwt mirage ocaml
+                           ocaml-lsp-server ocamlformat ocp-browser ppxlib
+                           ptime seq streaming utop yojson ];
     buildDepends = with self; [ dune ocaml ];
   };
   unstrctrd = {

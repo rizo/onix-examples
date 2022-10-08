@@ -26,7 +26,7 @@ depends: [
   "fmt"
   # "bap"
   # "bap-cxxfilt"
-  "conf-binutils"
+  # "conf-binutils"
   "ptime"
   "alcotest"
   "ppxlib"
