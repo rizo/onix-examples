@@ -217,7 +217,7 @@
   hello-with-test-doc-tools = rec {
     name = "hello-with-test-doc-tools";
     version = "root";
-    src = pkgs.nix-gitignore.gitignoreSource [] ./.;
+    src = ./.;
     opam = "${src}/hello-with-test-doc-tools.opam";
     depends = with self; [ fmt ocaml ];
     buildDepends = with self; [ dune ocaml ];
