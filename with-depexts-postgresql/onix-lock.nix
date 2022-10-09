@@ -2,18 +2,13 @@
   url = "https://github.com/ocaml/opam-repository.git";
   rev = "52c72e08d7782967837955f1c50c330a6131721f";
 } }:
-{
-  base-bigarray = {
-    name = "base-bigarray";
-    version = "base";
-    opam = "${repo}/packages/base-bigarray/base-bigarray.base/opam";
-  };
+rec {
   base-bytes = {
     name = "base-bytes";
     version = "base";
     opam = "${repo}/packages/base-bytes/base-bytes.base/opam";
-    depends = with self; [ ocaml ocamlfind ];
-    buildDepends = with self; [ ocaml ocamlfind ];
+    depends = [ ocaml ocamlfind ];
+    buildDepends = [ ocaml ocamlfind ];
   };
   base-threads = {
     name = "base-threads";
@@ -29,7 +24,7 @@
     name = "conf-postgresql";
     version = "1";
     opam = "${repo}/packages/conf-postgresql/conf-postgresql.1/opam";
-    depexts = with pkgs; [ postgresql ];
+    depexts = [ pkgs.postgresql ];
   };
   csexp = {
     name = "csexp";
@@ -39,9 +34,8 @@
       sha256 = "d605e4065fa90a58800440ef2f33a2d931398bf2c22061a8acb7df845c0aac02";
     };
     opam = "${repo}/packages/csexp/csexp.1.5.1/opam";
-    depends = with self; [ dune ocaml ];
-    buildDepends = with self; [ dune ocaml ];
-    docDepends = with self; [ odoc ];
+    depends = [ dune ocaml ];
+    buildDepends = [ dune ocaml ];
   };
   dune = {
     name = "dune";
@@ -51,9 +45,8 @@
       sha256 = "bd1fbce6ae79ed1eb26fa89bb2e2e23978afceb3f53f5578cf1bdab08a1ad5bc";
     };
     opam = "${repo}/packages/dune/dune.3.2.0/opam";
-    depends = with self; [ base-threads base-unix (self.ocaml or null)
-                           (self.ocamlfind-secondary or null) ];
-    buildDepends = with self; [ (self.ocaml or null) ];
+    depends = [ base-threads base-unix ocaml ];
+    buildDepends = [ ocaml ];
   };
   dune-configurator = {
     name = "dune-configurator";
@@ -63,17 +56,14 @@
       sha256 = "bd1fbce6ae79ed1eb26fa89bb2e2e23978afceb3f53f5578cf1bdab08a1ad5bc";
     };
     opam = "${repo}/packages/dune-configurator/dune-configurator.3.2.0/opam";
-    depends = with self; [ csexp dune ocaml ];
-    buildDepends = with self; [ dune ocaml ];
-    docDepends = with self; [ odoc ];
+    depends = [ csexp dune ocaml ];
+    buildDepends = [ dune ocaml ];
   };
   ocaml = {
     name = "ocaml";
     version = "4.14.0";
     opam = "${repo}/packages/ocaml/ocaml.4.14.0/opam";
-    depends = with self; [ ocaml-config (self.ocaml-base-compiler or null)
-                           (self.ocaml-system or null)
-                           (self.ocaml-variants or null) ];
+    depends = [ ocaml-base-compiler ocaml-config ];
   };
   ocaml-base-compiler = {
     name = "ocaml-base-compiler";
@@ -88,14 +78,7 @@
     name = "ocaml-config";
     version = "2";
     opam = "${repo}/packages/ocaml-config/ocaml-config.2/opam";
-    depends = with self; [ (self.ocaml-base-compiler or null)
-                           (self.ocaml-system or null)
-                           (self.ocaml-variants or null) ];
-  };
-  ocaml-options-vanilla = {
-    name = "ocaml-options-vanilla";
-    version = "1";
-    opam = "${repo}/packages/ocaml-options-vanilla/ocaml-options-vanilla.1/opam";
+    depends = [ ocaml-base-compiler ];
   };
   ocamlfind = {
     name = "ocamlfind";
@@ -105,8 +88,8 @@
       sha512 = "27cc4ce141576bf477fb9d61a82ad65f55478740eed59fb43f43edb794140829fd2ff89ad27d8a890cfc336b54c073a06de05b31100fc7c01cacbd7d88e928ea";
     };
     opam = "${repo}/packages/ocamlfind/ocamlfind.1.9.3/opam";
-    depends = with self; [ ocaml (self.graphics or null) ];
-    buildDepends = with self; [ ocaml ];
+    depends = [ ocaml ];
+    buildDepends = [ ocaml ];
   };
   postgresql = {
     name = "postgresql";
@@ -116,15 +99,15 @@
       sha256 = "9ccd405bf2a4811d86995102b0837f07230f30d05ed620b9d05fa66f607ef9d8";
     };
     opam = "${repo}/packages/postgresql/postgresql.5.0.0/opam";
-    depends = with self; [ base-bytes dune dune-configurator ocaml ];
-    buildDepends = with self; [ conf-postgresql dune ocaml ];
+    depends = [ base-bytes dune dune-configurator ocaml ];
+    buildDepends = [ conf-postgresql dune dune-configurator ocaml ];
   };
   with-depexts-postgresql = rec {
     name = "with-depexts-postgresql";
     version = "root";
     src = pkgs.nix-gitignore.gitignoreSource [] ./.;
     opam = "${src}/with-depexts-postgresql.opam";
-    depends = with self; [ dune ocaml postgresql ];
-    buildDepends = with self; [ dune ocaml ];
+    depends = [ dune ocaml postgresql ];
+    buildDepends = [ dune ocaml ];
   };
 }
