@@ -2,12 +2,11 @@
 
 let
   ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_14;
-
-  onix = import ../../onix/default.nix { inherit pkgs ocamlPackages; };
-
-  scope = onix.build {
-    ocaml = ocamlPackages.ocaml;
-    lock = ./onix-lock.nix;
-    overrides = { };
+  onix = import ./nix/onix.nix { inherit pkgs ocamlPackages; };
+in {
+  scope = onix.build { lockFile = ./onix-lock.nix; };
+  lock = onix.lock {
+    repoUrl =
+      "https://github.com/ocaml/opam-repository.git#52c72e08d7782967837955f1c50c330a6131721f";
   };
-in scope."with-pin-depends"
+}
