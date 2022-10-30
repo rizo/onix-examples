@@ -15,5 +15,5 @@ in rec {
     withDoc = true;
     withDevSetup = true;
   };
-  shell = pkgs.mkShell { inputsFrom = [ scope.hello-with-test-doc-tools ]; };
+  shell = pkgs.mkShell { inputsFrom = [ scope.hello-with-dep-flags ]; };
 }
