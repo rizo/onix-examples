@@ -6,9 +6,6 @@ let
 in rec {
   scope = onix.build {
     lockFile = ./onix-lock.nix;
-    withTest = true;
-    withDoc = true;
-    withTools = true;
   };
   lock = onix.lock {
     repoUrl =
