@@ -1,3 +1,5 @@
 (executable
   (public_name hello)
-  (libraries fmt))
+  (libraries fmt)
+  (modes native)
+  (ocamlopt_flags -O3))

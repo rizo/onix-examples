@@ -14,8 +14,10 @@ in {
   scope = onix.build { projectRoot = ./.; };
   lock = onix.lock {
     repositories = [
-      "https://github.com/ocaml/opam-repository.git#52c72e08d7782967837955f1c50c330a6131721f"
+      "https://github.com/kit-ty-kate/opam-alpha-repository"
+      "https://github.com/ocaml/ocaml-beta-repository.git"
+      "https://github.com/ocaml/opam-repository.git#fe53d261c062c23d8271f6887702b9bc7459ad2e"
     ];
-    resolutions = { "ocaml-system" = "*"; };
+    resolutions = { "ocaml-variants" = "5.0.0~beta1+options"; };
   };
 }
