@@ -1,0 +1,5 @@
+(executable
+  (public_name hello)
+  (libraries pp))
+
+(vendored_dirs vendor)

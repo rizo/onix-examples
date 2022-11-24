@@ -1,0 +1,76 @@
+{
+   "version": "0.0.7",
+   "repositories": [
+     {
+       "url": "https://github.com/ocaml/opam-repository.git",
+       "rev": "03cdcda5b3a74772bd5f92ff9bcfb1b1310ceaf3"
+     }
+   ],
+   "packages" : {
+     "base-threads": {
+       "version": "base"
+     },
+     "base-unix": {
+       "version": "base"
+     },
+     "dune": {
+       "version": "3.5.0",
+       "src": {
+         "url": "https://github.com/ocaml/dune/releases/download/3.5.0/dune-3.5.0.tbz",
+         "sha256": "77bd4c6704359fae1969636cfc3cd7a517ba3604819ef89c919c0762b5093610"
+       },
+       "depends": [
+         "base-threads",
+         "base-unix",
+         "ocaml"
+       ]
+     },
+     "ocaml": {
+       "version": "4.14.0",
+       "depends": [
+         "ocaml-config",
+         "ocaml-system"
+       ],
+       "buildDepends": [
+         "ocaml-system"
+       ]
+     },
+     "ocaml-config": {
+       "version": "2",
+       "depends": [
+         "ocaml-system"
+       ],
+       "buildDepends": [
+         "ocaml-system"
+       ]
+     },
+     "ocaml-system": {
+       "version": "4.14.0",
+       "depexts": [
+         "ocaml-ng.ocamlPackages_4_14.ocaml"
+       ]
+     },
+     "pp": {
+       "version": "root",
+       "src": { "url": "file://vendor/pp" },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "use-vendored-dep": {
+       "version": "root",
+       "src": { "url": "file://." },
+       "depends": [
+         "ocaml",
+         "pp"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     }
+   }
+}
