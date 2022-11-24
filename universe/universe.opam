@@ -1,12 +1,10 @@
 opam-version: "2.0"
-synopsis: "Simple hello-world example using onix"
 maintainer: ["Rizo I. <rizo@odis.io>"]
 license: "ISC"
 homepage: "https://github.com/odis-labs/onix"
 bug-reports: "https://github.com/odis-labs/onix/issues"
 dev-repo: "git+https://github.com/odis-labs/onix.git"
 build: [
-  ["echo" "+++ conf-binutils:cxxfilts=%{conf-binutils:cxxfilts}%"]
   ["dune" "subst"] {pinned}
   [
     "dune"
@@ -24,9 +22,9 @@ depends: [
   "ocaml" {>= "4.08" & < "5.0"}
   "dune" {>= "2.0"}
   "fmt"
-  # "bap"
-  # "bap-cxxfilt"
-  # "conf-binutils"
+  "liquidsoap"
+  "bap-cxxfilt"
+  "conf-binutils"
   "ptime"
   "alcotest"
   "ppxlib"
@@ -44,7 +42,7 @@ depends: [
   "seq"
   "gen"
   "containers"
-  # "batteries"
+  "batteries"
   "benchmark"
   "yojson"
   "caqti"
