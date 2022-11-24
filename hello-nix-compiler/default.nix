@@ -10,12 +10,10 @@ let
   # }) { inherit pkgs ocamlPackages; };
 
   onix = import ./../onix.nix { inherit pkgs ocamlPackages; };
-in {
-  scope = onix.build { projectRoot = ./.; };
-  lock = onix.lock {
-    repositories = [
-      "https://github.com/ocaml/opam-repository.git#52c72e08d7782967837955f1c50c330a6131721f"
-    ];
-    resolutions = { "ocaml-system" = "*"; };
-  };
+
+in onix.project ./. {
+  repositories = [
+    "https://github.com/ocaml/opam-repository.git#03cdcda5b3a74772bd5f92ff9bcfb1b1310ceaf3"
+  ];
+  resolutions = { "ocaml-system" = "*"; };
 }
