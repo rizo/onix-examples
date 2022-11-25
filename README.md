@@ -15,11 +15,11 @@ $ nix develop -f default lock
 ### Start a development shell
 
 ```
-$ nix develop --file ./default.nix -j8 shell
+$ nix develop -f ./default.nix -j8 shell
 ```
 
 ### Build all root packages
 
 ```
-$ nix build --file ./default.nix -j8 all
+$ nix build -f ./default.nix -j8 all
 ```
