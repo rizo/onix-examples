@@ -6,23 +6,37 @@ author: "The onix programmers"
 homepage: "https://github.com/odis-labs/onix"
 bug-reports: "https://github.com/odis-labs/onix/issues"
 depends: [
+  "alcotest" {= "1.6.0"}
+  "astring" {= "0.8.5"}
   "base-bytes" {= "base"}
   "base-threads" {= "base"}
   "base-unix" {= "base"}
   "base64" {= "3.5.0"}
+  "camlp-streams" {= "5.0.1"}
+  "cmdliner" {= "1.1.1"}
+  "cppo" {= "1.6.9"}
   "dune" {= "3.5.0"}
   "either" {= "1.0.0"}
   "fmt" {= "dev"}
+  "fpath" {= "0.7.3"}
   "jsonm" {= "1.0.1"}
   "ocaml" {= "4.14.0"}
   "ocaml-config" {= "2"}
+  "ocaml-syntax-shims" {= "1.0.0"}
   "ocaml-system" {= "4.14.0"}
   "ocamlbuild" {= "0.14.2"}
   "ocamlfind" {= "1.9.5"}
+  "odoc" {= "2.1.1"}
+  "odoc-parser" {= "1.0.1"}
   "optint" {= "0.2.0"}
   "options" {= "dev"}
+  "re" {= "1.10.4"}
   "repr" {= "dev"}
+  "result" {= "1.5"}
+  "seq" {= "base"}
+  "stdlib-shims" {= "0.3.0"}
   "topkg" {= "1.0.6"}
+  "tyxml" {= "4.5.0"}
   "uchar" {= "0.0.2"}
   "uutf" {= "1.0.3"}
 ]

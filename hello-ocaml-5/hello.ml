@@ -1,5 +1,8 @@
-let hello name =
-  Fmt.pr "Hello, %s!@." name
+open Eio.Std
+
+let main ~stdout =
+  Eio.Flow.copy_string "Hello, world!\n" stdout
 
 let () =
-  hello "world"
+ Eio_main.run @@ fun env ->
+  main ~stdout:(Eio.Stdenv.stdout env)

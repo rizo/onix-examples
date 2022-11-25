@@ -1,4 +1,4 @@
 import (builtins.fetchGit {
   url = "https://github.com/odis-labs/onix.git";
-  rev = "f812a6b6887131f0cdf6c457541da252b35d613f";
+  rev = "167ba5cb8c7c31eee1d1a250976615bb50e65f04";
 })

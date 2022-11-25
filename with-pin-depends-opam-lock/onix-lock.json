@@ -7,6 +7,42 @@
      }
    ],
    "packages" : {
+     "alcotest": {
+       "version": "1.6.0",
+       "src": {
+         "url": "https://github.com/mirage/alcotest/releases/download/1.6.0/alcotest-1.6.0.tbz",
+         "sha256": "fd00f9668395874ff3b1d7ef566d14efc02fa7dd34123eb25d59355be94b2329"
+       },
+       "depends": [
+         "astring",
+         "cmdliner",
+         "dune",
+         "fmt",
+         "ocaml",
+         "ocaml-syntax-shims",
+         "re",
+         "stdlib-shims",
+         "uutf"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "astring": {
+       "version": "0.8.5",
+       "src": {
+         "url": "https://erratique.ch/software/astring/releases/astring-0.8.5.tbz",
+         "sha256": "1ykhg9gd3iy7zsgyiy2p9b1wkpqg9irw5pvcqs3sphq71iir4ml6"
+       },
+       "depends": [
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
+       ]
+     },
      "base-bytes": {
        "version": "base",
        "depends": [
@@ -31,6 +67,45 @@
        },
        "depends": [
          "base-bytes",
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "camlp-streams": {
+       "version": "5.0.1",
+       "src": {
+         "url": "https://github.com/ocaml/camlp-streams/archive/v5.0.1.tar.gz",
+         "sha512": "2efa8dd4a636217c8d49bac1e4e7e5558fc2f45cfea66514140a59fd99dd08d61fb9f1e17804997ff648b71b13820a5d4a1eb70fed9d848aa2abd6e41f853c86"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "cmdliner": {
+       "version": "1.1.1",
+       "src": {
+         "url": "https://erratique.ch/software/cmdliner/releases/cmdliner-1.1.1.tbz",
+         "sha512": "5478ad833da254b5587b3746e3a8493e66e867a081ac0f653a901cc8a7d944f66e4387592215ce25d939be76f281c4785702f54d4a74b1700bc8838a62255c9e"
+       },
+       "depends": [
+         "ocaml"
+       ]
+     },
+     "cppo": {
+       "version": "1.6.9",
+       "src": {
+         "url": "https://github.com/ocaml-community/cppo/archive/v1.6.9.tar.gz",
+         "sha512": "26ff5a7b7f38c460661974b23ca190f0feae3a99f1974e0fd12ccf08745bd7d91b7bc168c70a5385b837bfff9530e0e4e41cf269f23dd8cf16ca658008244b44"
+       },
+       "depends": [
+         "base-unix",
          "dune",
          "ocaml"
        ],
@@ -71,6 +146,23 @@
        },
        "depends": [
          "base-unix",
+         "cmdliner",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
+       ]
+     },
+     "fpath": {
+       "version": "0.7.3",
+       "src": {
+         "url": "https://erratique.ch/software/fpath/releases/fpath-0.7.3.tbz",
+         "sha256": "03z7mj0sqdz465rc4drj1gr88l9q3nfs374yssvdjdyhjbqqzc0j"
+       },
+       "depends": [
+         "astring",
          "ocaml"
        ],
        "buildDepends": [
@@ -115,6 +207,20 @@
          "ocaml-system"
        ]
      },
+     "ocaml-syntax-shims": {
+       "version": "1.0.0",
+       "src": {
+         "url": "https://github.com/ocaml-ppx/ocaml-syntax-shims/releases/download/1.0.0/ocaml-syntax-shims-1.0.0.tbz",
+         "sha256": "89b2e193e90a0c168b6ec5ddf6fef09033681bdcb64e11913c97440a2722e8c8"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
      "ocaml-system": {
        "version": "4.14.0",
        "depexts": [
@@ -139,6 +245,45 @@
        },
        "depends": [
          "ocaml"
+       ]
+     },
+     "odoc": {
+       "version": "2.1.1",
+       "src": {
+         "url": "https://github.com/ocaml/odoc/releases/download/2.1.1/odoc-2.1.1.tbz",
+         "sha256": "f574dbd28cd0fc3a2b95525c4bb95ddf6d1f6408bb4fe12157fa537884f987fd"
+       },
+       "depends": [
+         "astring",
+         "cmdliner",
+         "dune",
+         "fmt",
+         "fpath",
+         "ocaml",
+         "odoc-parser",
+         "result",
+         "tyxml"
+       ],
+       "buildDepends": [
+         "cppo",
+         "dune"
+       ]
+     },
+     "odoc-parser": {
+       "version": "1.0.1",
+       "src": {
+         "url": "https://github.com/ocaml-doc/odoc-parser/releases/download/1.0.1/odoc-parser-1.0.1.tbz",
+         "sha256": "a2bbe8e4201b60e980bab01e96e41f2ba0b05ba3f50b44f75837e8a2fb907d2c"
+       },
+       "depends": [
+         "astring",
+         "camlp-streams",
+         "dune",
+         "ocaml",
+         "result"
+       ],
+       "buildDepends": [
+         "dune"
        ]
      },
      "optint": {
@@ -168,6 +313,21 @@
          "dune"
        ]
      },
+     "re": {
+       "version": "1.10.4",
+       "src": {
+         "url": "https://github.com/ocaml/ocaml-re/releases/download/1.10.4/re-1.10.4.tbz",
+         "sha256": "83eb3e4300aa9b1dc7820749010f4362ea83524742130524d78c20ce99ca747c"
+       },
+       "depends": [
+         "dune",
+         "ocaml",
+         "seq"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
      "repr": {
        "version": "dev",
        "src": {
@@ -188,6 +348,40 @@
          "dune"
        ]
      },
+     "result": {
+       "version": "1.5",
+       "src": {
+         "url": "https://github.com/janestreet/result/releases/download/1.5/result-1.5.tbz",
+         "sha256": "0cpfp35fdwnv3p30a06wd0py3805qxmq3jmcynjc3x2qhlimwfkw"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "seq": {
+       "version": "base",
+       "depends": [
+         "ocaml"
+       ]
+     },
+     "stdlib-shims": {
+       "version": "0.3.0",
+       "src": {
+         "url": "https://github.com/ocaml/stdlib-shims/releases/download/0.3.0/stdlib-shims-0.3.0.tbz",
+         "sha256": "babf72d3917b86f707885f0c5528e36c63fccb698f4b46cf2bab5c7ccdd6d84a"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
      "topkg": {
        "version": "1.0.6",
        "src": {
@@ -201,6 +395,23 @@
        "buildDepends": [
          "ocamlbuild",
          "ocamlfind"
+       ]
+     },
+     "tyxml": {
+       "version": "4.5.0",
+       "src": {
+         "url": "https://github.com/ocsigen/tyxml/releases/download/4.5.0/tyxml-4.5.0.tbz",
+         "sha256": "c69accef5df4dd89d38f6aa0baad01e8fda4e9e98bb7dad61bec1452c5716068"
+       },
+       "depends": [
+         "dune",
+         "ocaml",
+         "re",
+         "seq",
+         "uutf"
+       ],
+       "buildDepends": [
+         "dune"
        ]
      },
      "uchar": {
@@ -223,6 +434,7 @@
          "sha512": "50cc4486021da46fb08156e9daec0d57b4ca469b07309c508d5a9a41e9dbcf1f32dec2ed7be027326544453dcaf9c2534919395fd826dc7768efc6cc4bfcc9f8"
        },
        "depends": [
+         "cmdliner",
          "ocaml"
        ],
        "buildDepends": [
@@ -243,6 +455,12 @@
        ],
        "buildDepends": [
          "dune"
+       ],
+       "testDepends": [
+         "alcotest"
+       ],
+       "docDepends": [
+         "odoc"
        ]
      }
    }

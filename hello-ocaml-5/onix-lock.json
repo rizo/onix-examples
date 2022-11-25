@@ -21,6 +21,42 @@
      "base-unix": {
        "version": "base"
      },
+     "bigstringaf": {
+       "version": "0.9.0",
+       "src": {
+         "url": "https://github.com/inhabitedtype/bigstringaf/archive/0.9.0.tar.gz",
+         "sha256": "0v0h09r0690b6b27ww443zxvj1dwhxcy86fbjaf2wm56kb3qccsl"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "conf-pkg-config",
+         "dune"
+       ]
+     },
+     "conf-pkg-config": {
+       "version": "2",
+       "depexts": [
+         "pkgconfig"
+       ]
+     },
+     "cstruct": {
+       "version": "6.1.1",
+       "src": {
+         "url": "https://github.com/mirage/ocaml-cstruct/releases/download/v6.1.1/cstruct-6.1.1.tbz",
+         "sha256": "1b74f9870f6a7ee6008924590716dd533a728a3ca10bb18da9fea8be467f518d"
+       },
+       "depends": [
+         "dune",
+         "fmt",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
      "dune": {
        "version": "3.6.0",
        "src": {
@@ -31,6 +67,28 @@
          "base-threads",
          "base-unix",
          "ocaml"
+       ]
+     },
+     "eio": {
+       "version": "0.6",
+       "src": {
+         "url": "https://github.com/ocaml-multicore/eio/releases/download/v0.6/eio-0.6.tbz",
+         "sha256": "ead3eea352dd3d7d11a81ffdbeee6ca94d5e6b3f46de264b4e59689360b3ef38"
+       },
+       "depends": [
+         "bigstringaf",
+         "cstruct",
+         "dune",
+         "fmt",
+         "hmap",
+         "lwt-dllist",
+         "mtime",
+         "ocaml",
+         "optint",
+         "psq"
+       ],
+       "buildDepends": [
+         "dune"
        ]
      },
      "fmt": {
@@ -53,11 +111,56 @@
        "version": "root",
        "src": { "url": "file://." },
        "depends": [
+         "eio",
          "fmt",
          "ocaml"
        ],
        "buildDepends": [
          "dune"
+       ]
+     },
+     "hmap": {
+       "version": "0.8.1",
+       "src": {
+         "url": "http://erratique.ch/software/hmap/releases/hmap-0.8.1.tbz",
+         "sha256": "10xyjy4ab87z7jnghy0wnla9wrmazgyhdwhr4hdmxxdn28dxn03a"
+       },
+       "depends": [
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
+       ]
+     },
+     "lwt-dllist": {
+       "version": "1.0.1",
+       "src": {
+         "url": "https://github.com/mirage/lwt-dllist/releases/download/v1.0.1/lwt-dllist-v1.0.1.tbz",
+         "sha256": "e86ce75e40f00d51514cf8b2e71e5184c4cb5dae96136be24613406cfc0dba6e"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "mtime": {
+       "version": "1.4.0",
+       "src": {
+         "url": "https://erratique.ch/software/mtime/releases/mtime-1.4.0.tbz",
+         "sha512": "0492fa5f5187b909fe2b0550363c7dcb8cffef963d51072272ef3d876b51e1ddf8de4c4e221cffb0144658fccf6a0dc584a5c8094a4b2208156e43bad5b269d4"
+       },
+       "depends": [
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
        ]
      },
      "ocaml": {
@@ -102,6 +205,40 @@
          "url": "http://download.camlcity.org/download/findlib-1.9.5.tar.gz",
          "sha512": "03514c618a16b02889db997c6c4789b3436b3ad7d974348d2c6dea53eb78898ab285ce5f10297c074bab4fd2c82931a8b7c5c113b994447a44abb30fca74c715"
        },
+       "depends": [
+         "ocaml"
+       ]
+     },
+     "optint": {
+       "version": "0.2.0",
+       "src": {
+         "url": "https://github.com/mirage/optint/releases/download/v0.2.0/optint-0.2.0.tbz",
+         "sha256": "1dcbe0b6b6031f77db33028c87138fdb3bf90f92915e3b6629ddeb30a0d3000b"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "psq": {
+       "version": "0.2.1",
+       "src": {
+         "url": "https://github.com/pqwy/psq/releases/download/v0.2.1/psq-0.2.1.tbz",
+         "sha256": "42005f533eabe74b1799ee32b8905654cd66a22bed4af2bd266b28d8462cd344"
+       },
+       "depends": [
+         "ocaml",
+         "seq"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "seq": {
+       "version": "base",
        "depends": [
          "ocaml"
        ]

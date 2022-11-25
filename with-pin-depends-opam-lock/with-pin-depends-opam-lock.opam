@@ -24,6 +24,8 @@ depends: [
   "fmt"
   "repr"
   "options"
+  "alcotest" {with-test}
+  "odoc" {with-doc}
 ]
 pin-depends: [
   ["repr.dev" "git+https://github.com/mirage/repr.git#0aee7b84b5d5b09a9495ece75c2c9fde0415872c"]
