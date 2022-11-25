@@ -22,5 +22,5 @@ depends: [
   "ocaml" {>= "5.00" & < "6.00"}
   "dune" {build}
   "fmt"
-  "eio"
+  "eio_main"
 ]

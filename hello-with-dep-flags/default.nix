@@ -6,7 +6,7 @@ let
   # Use this in your code:
   # onix = import (builtins.fetchGit {
   #   url = "https://github.com/odis-labs/onix.git";
-  #   rev = "167ba5cb8c7c31eee1d1a250976615bb50e65f04";
+  #   rev = "95cb23ec5afc05fcc8c661d77e8cd70b34c7c55a";
   # }) { inherit pkgs ocamlPackages; };
   onix = import ./nix/onix.nix { inherit pkgs ocamlPackages; };
 
