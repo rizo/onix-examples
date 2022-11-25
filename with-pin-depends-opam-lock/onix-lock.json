@@ -1,0 +1,249 @@
+{
+   "version": "0.0.7",
+   "repositories": [
+     {
+       "url": "https://github.com/ocaml/opam-repository.git",
+       "rev": "03cdcda5b3a74772bd5f92ff9bcfb1b1310ceaf3"
+     }
+   ],
+   "packages" : {
+     "base-bytes": {
+       "version": "base",
+       "depends": [
+         "ocaml",
+         "ocamlfind"
+       ],
+       "buildDepends": [
+         "ocamlfind"
+       ]
+     },
+     "base-threads": {
+       "version": "base"
+     },
+     "base-unix": {
+       "version": "base"
+     },
+     "base64": {
+       "version": "3.5.0",
+       "src": {
+         "url": "https://github.com/mirage/ocaml-base64/releases/download/v3.5.0/base64-v3.5.0.tbz",
+         "sha256": "589de9c00578ebfe784198ac9818d3586c474b2316b6cd3e1c46ccb1f62ae3a4"
+       },
+       "depends": [
+         "base-bytes",
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "dune": {
+       "version": "3.5.0",
+       "src": {
+         "url": "https://github.com/ocaml/dune/releases/download/3.5.0/dune-3.5.0.tbz",
+         "sha256": "77bd4c6704359fae1969636cfc3cd7a517ba3604819ef89c919c0762b5093610"
+       },
+       "depends": [
+         "base-threads",
+         "base-unix",
+         "ocaml"
+       ]
+     },
+     "either": {
+       "version": "1.0.0",
+       "src": {
+         "url": "https://github.com/mirage/either/releases/download/1.0.0/either-1.0.0.tbz",
+         "sha256": "bf674de3312dee7b7215f07df1e8a96eb3d679164b8a918cdd95b8d97e505884"
+       },
+       "depends": [
+         "dune"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "fmt": {
+       "version": "dev",
+       "src": {
+         "url": "git+https://github.com/dbuenzli/fmt.git",
+         "rev": "f96d77908dd19ed439c3b200292904a3dc7276f0"
+       },
+       "depends": [
+         "base-unix",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
+       ]
+     },
+     "jsonm": {
+       "version": "1.0.1",
+       "src": {
+         "url": "http://erratique.ch/software/jsonm/releases/jsonm-1.0.1.tbz",
+         "sha256": "1176dcmxb11fnw49b7yysvkjh0kpzx4s48lmdn5psq9vshp5c29w"
+       },
+       "depends": [
+         "ocaml",
+         "uchar",
+         "uutf"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
+       ]
+     },
+     "ocaml": {
+       "version": "4.14.0",
+       "depends": [
+         "ocaml-config",
+         "ocaml-system"
+       ],
+       "buildDepends": [
+         "ocaml-system"
+       ]
+     },
+     "ocaml-config": {
+       "version": "2",
+       "depends": [
+         "ocaml-system"
+       ],
+       "buildDepends": [
+         "ocaml-system"
+       ]
+     },
+     "ocaml-system": {
+       "version": "4.14.0",
+       "depexts": [
+         "ocaml-ng.ocamlPackages_4_14.ocaml"
+       ]
+     },
+     "ocamlbuild": {
+       "version": "0.14.2",
+       "src": {
+         "url": "https://github.com/ocaml/ocamlbuild/archive/refs/tags/0.14.2.tar.gz",
+         "sha512": "f568bf10431a1f701e8bd7554dc662400a0d978411038bbad93d44dceab02874490a8a5886a9b44e017347e7949997f13f5c3752f74e1eb5e273d2beb19a75fd"
+       },
+       "depends": [
+         "ocaml"
+       ]
+     },
+     "ocamlfind": {
+       "version": "1.9.5",
+       "src": {
+         "url": "http://download.camlcity.org/download/findlib-1.9.5.tar.gz",
+         "sha512": "03514c618a16b02889db997c6c4789b3436b3ad7d974348d2c6dea53eb78898ab285ce5f10297c074bab4fd2c82931a8b7c5c113b994447a44abb30fca74c715"
+       },
+       "depends": [
+         "ocaml"
+       ]
+     },
+     "optint": {
+       "version": "0.2.0",
+       "src": {
+         "url": "https://github.com/mirage/optint/releases/download/v0.2.0/optint-0.2.0.tbz",
+         "sha256": "1dcbe0b6b6031f77db33028c87138fdb3bf90f92915e3b6629ddeb30a0d3000b"
+       },
+       "depends": [
+         "dune",
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "options": {
+       "version": "dev",
+       "src": {
+         "url": "git+https://github.com/odis-labs/options.git",
+         "rev": "5b1165d99aba112d550ddc3133a8eb1d174441ec"
+       },
+       "depends": [
+         "ocaml"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "repr": {
+       "version": "dev",
+       "src": {
+         "url": "git+https://github.com/mirage/repr.git",
+         "rev": "0aee7b84b5d5b09a9495ece75c2c9fde0415872c"
+       },
+       "depends": [
+         "base64",
+         "dune",
+         "either",
+         "fmt",
+         "jsonm",
+         "ocaml",
+         "optint",
+         "uutf"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     },
+     "topkg": {
+       "version": "1.0.6",
+       "src": {
+         "url": "https://erratique.ch/software/topkg/releases/topkg-1.0.6.tbz",
+         "sha512": "8e34391e2f499cec332b79454a4edb36a35db6fe22437f017fd5c80ae065160dc967ac02d894a94d08d62dd476521e63733f4cadc3b9b6b314b6aa5b2b4ede78"
+       },
+       "depends": [
+         "ocaml",
+         "ocamlbuild"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind"
+       ]
+     },
+     "uchar": {
+       "version": "0.0.2",
+       "src": {
+         "url": "https://github.com/ocaml/uchar/releases/download/v0.0.2/uchar-0.0.2.tbz",
+         "sha256": "1w2saw7zanf9m9ffvz2lvcxvlm118pws2x1wym526xmydhqpyfa7"
+       },
+       "depends": [
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild"
+       ]
+     },
+     "uutf": {
+       "version": "1.0.3",
+       "src": {
+         "url": "https://erratique.ch/software/uutf/releases/uutf-1.0.3.tbz",
+         "sha512": "50cc4486021da46fb08156e9daec0d57b4ca469b07309c508d5a9a41e9dbcf1f32dec2ed7be027326544453dcaf9c2534919395fd826dc7768efc6cc4bfcc9f8"
+       },
+       "depends": [
+         "ocaml"
+       ],
+       "buildDepends": [
+         "ocamlbuild",
+         "ocamlfind",
+         "topkg"
+       ]
+     },
+     "with-pin-depends-opam-lock": {
+       "version": "root",
+       "src": { "url": "file://." },
+       "depends": [
+         "dune",
+         "fmt",
+         "ocaml",
+         "options",
+         "repr"
+       ],
+       "buildDepends": [
+         "dune"
+       ]
+     }
+   }
+}
