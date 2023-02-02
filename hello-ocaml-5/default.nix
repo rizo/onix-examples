@@ -13,8 +13,8 @@ let
 
 in onix.project ./. {
   repositories = [
-    "https://github.com/kit-ty-kate/opam-alpha-repository"
-    "https://github.com/ocaml/ocaml-beta-repository.git"
+    "https://github.com/kit-ty-kate/opam-alpha-repository#0a81964b3d1e27a6aaf699e3a2153059b77435e2"
+    "https://github.com/ocaml/ocaml-beta-repository.git#79aeeadd813bdae424ab53f882f08bee0a4e0b89"
     "https://github.com/ocaml/opam-repository.git#fe53d261c062c23d8271f6887702b9bc7459ad2e"
   ];
 

@@ -8,12 +8,19 @@ let
   #   url = "https://github.com/odis-labs/onix.git";
   #   rev = "95cb23ec5afc05fcc8c661d77e8cd70b34c7c55a";
   # }) { inherit pkgs ocamlPackages; };
-  onix = import ../onix.nix { inherit pkgs ocamlPackages; };
+  onix = import ../onix.nix {
+    inherit pkgs ocamlPackages;
+    verbosity = "debug";
+  };
 
-in onix.project ./. {
-  roots = [ ./use-vendored-dep.opam ./vendor/pp/pp.opam ];
-  repositories = [
-    "https://github.com/ocaml/opam-repository.git#03cdcda5b3a74772bd5f92ff9bcfb1b1310ceaf3"
-  ];
-  resolutions = { "ocaml-system" = "*"; };
+in onix.env {
+  path = ./.;
+  repo = {
+    url = "https://github.com/ocaml/opam-repository.git";
+    rev = "f3dcd527e82e83facb92cd2727651938cb9fecf9";
+  };
+  deps = {
+    "ocaml-system" = "*";
+    "pp" = ./vendor/pp/pp.opam;
+  };
 }

@@ -3,7 +3,7 @@
    "repositories": [
      {
        "url": "https://github.com/ocaml/opam-repository.git",
-       "rev": "03cdcda5b3a74772bd5f92ff9bcfb1b1310ceaf3"
+       "rev": "f3dcd527e82e83facb92cd2727651938cb9fecf9"
      }
    ],
    "packages" : {
@@ -14,10 +14,10 @@
        "version": "base"
      },
      "dune": {
-       "version": "3.5.0",
+       "version": "3.4.1",
        "src": {
-         "url": "https://github.com/ocaml/dune/releases/download/3.5.0/dune-3.5.0.tbz",
-         "sha256": "77bd4c6704359fae1969636cfc3cd7a517ba3604819ef89c919c0762b5093610"
+         "url": "https://github.com/ocaml/dune/releases/download/3.4.1/dune-3.4.1.tbz",
+         "sha256": "299fa33cffc108cc26ff59d5fc9d09f6cb0ab3ac280bf23a0114cfdc0b40c6c5"
        },
        "depends": [
          "base-threads",
@@ -31,7 +31,7 @@
          "ocaml-config",
          "ocaml-system"
        ],
-       "buildDepends": [
+       "build-depends": [
          "ocaml-system"
        ]
      },
@@ -40,7 +40,7 @@
        "depends": [
          "ocaml-system"
        ],
-       "buildDepends": [
+       "build-depends": [
          "ocaml-system"
        ]
      },
@@ -50,26 +50,38 @@
          "ocaml-ng.ocamlPackages_4_14.ocaml"
        ]
      },
+     "ocamlfind": {
+       "version": "1.9.5",
+       "src": {
+         "url": "http://download.camlcity.org/download/findlib-1.9.5.tar.gz",
+         "sha512": "03514c618a16b02889db997c6c4789b3436b3ad7d974348d2c6dea53eb78898ab285ce5f10297c074bab4fd2c82931a8b7c5c113b994447a44abb30fca74c715"
+       },
+       "depends": [
+         "ocaml"
+       ]
+     },
      "pp": {
-       "version": "root",
+       "version": "dev",
        "src": { "url": "file://vendor/pp" },
        "depends": [
          "dune",
          "ocaml"
        ],
-       "buildDepends": [
-         "dune"
+       "build-depends": [
+         "dune",
+         "ocamlfind"
        ]
      },
      "use-vendored-dep": {
-       "version": "root",
+       "version": "dev",
        "src": { "url": "file://." },
        "depends": [
          "ocaml",
          "pp"
        ],
-       "buildDepends": [
-         "dune"
+       "build-depends": [
+         "dune",
+         "ocamlfind"
        ]
      }
    }
