@@ -9,17 +9,17 @@ Navigate to the folder of the example that you want to run and try some of the f
 ### Regenerate a lock file
 
 ```
-$ nix develop -f default lock
+$ make lock
 ```
 
 ### Start a development shell
 
 ```
-$ nix develop -f ./default.nix -j8 shell
+$ make shell
 ```
 
-### Build all root packages
+### Build root opam packages
 
 ```
-$ nix build -f ./default.nix -j8 all
+$ make build
 ```
