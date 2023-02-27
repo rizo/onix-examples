@@ -1,22 +1,30 @@
 { pkgs ? import <nixpkgs> { } }:
 
 let
-  ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_14;
+  onix = import (builtins.fetchGit {
+    url = "https://github.com/odis-labs/onix.git";
+    rev = "a5534a86d3eee96c80c41c3c895407fef06dcc9a";
+  }) {
+    inherit pkgs;
+    verbosity = "info";
+  };
 
-  # Use this in your code:
-  # onix = import (builtins.fetchGit {
-  #   url = "https://github.com/odis-labs/onix.git";
-  #   rev = "95cb23ec5afc05fcc8c661d77e8cd70b34c7c55a";
-  # }) { inherit pkgs ocamlPackages; };
-
-  onix = import ./../onix.nix { inherit pkgs ocamlPackages; };
-
-in onix.project ./. {
-  repositories = [
-    "https://github.com/kit-ty-kate/opam-alpha-repository#0a81964b3d1e27a6aaf699e3a2153059b77435e2"
-    "https://github.com/ocaml/ocaml-beta-repository.git#79aeeadd813bdae424ab53f882f08bee0a4e0b89"
-    "https://github.com/ocaml/opam-repository.git#fe53d261c062c23d8271f6887702b9bc7459ad2e"
+in onix.env {
+  path = ./.;
+  repos = [
+    {
+      url = "https://github.com/kit-ty-kate/opam-alpha-repository";
+      rev = "cafd5168f52ea965cdfa64d347944c92ca431362";
+    }
+    {
+      url = "https://github.com/ocaml/ocaml-beta-repository.git";
+      rev = "79aeeadd813bdae424ab53f882f08bee0a4e0b89";
+    }
+    {
+      url = "https://github.com/ocaml/opam-repository.git";
+      rev = "16930bbc587dcc61157036ef31040b5bcd3e52bc";
+    }
   ];
 
-  resolutions = { "ocaml-variants" = "5.0.0~beta1+options"; };
+  deps = { "ocaml-variants" = "5.1.0+trunk"; };
 }

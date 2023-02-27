@@ -1,4 +1,4 @@
 (executable
-  (public_name hello-nix-compiler-flakes)
+  (public_name example)
   (name hello)
   (libraries fmt))

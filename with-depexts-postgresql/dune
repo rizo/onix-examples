@@ -1,4 +1,4 @@
 (executable
-  (name Main)
+  (name example)
   (public_name onix-with-depexts-postgresql)
   (libraries postgresql))

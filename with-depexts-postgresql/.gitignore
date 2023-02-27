@@ -1,1 +1,3 @@
-../.gitignore
+result
+.onix.env
+_*

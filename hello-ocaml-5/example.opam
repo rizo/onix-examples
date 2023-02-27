@@ -22,5 +22,12 @@ depends: [
   "ocaml" {>= "5.00" & < "6.00"}
   "dune" {build}
   "fmt"
+  "eio"
   "eio_main"
+  "eio_luv"
+]
+pin-depends: [
+  "eio.dev" "git+https://github.com/ocaml-multicore/eio#fd3333678645bc593557f21fa9f555a1e010a845"
+  "eio_luv.dev" "git+https://github.com/ocaml-multicore/eio#fd3333678645bc593557f21fa9f555a1e010a845"
+  "eio_main.dev" "git+https://github.com/ocaml-multicore/eio#fd3333678645bc593557f21fa9f555a1e010a845"
 ]

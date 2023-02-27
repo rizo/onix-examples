@@ -3,7 +3,7 @@
    "repositories": [
      {
        "url": "https://github.com/kit-ty-kate/opam-alpha-repository",
-       "rev": "0a81964b3d1e27a6aaf699e3a2153059b77435e2"
+       "rev": "cafd5168f52ea965cdfa64d347944c92ca431362"
      },
      {
        "url": "https://github.com/ocaml/ocaml-beta-repository.git",
@@ -33,6 +33,17 @@
          "ocaml"
        ]
      },
+     "example": {
+       "version": "dev",
+       "src": { "url": "file://." },
+       "depends": [
+         "fmt",
+         "ocaml"
+       ],
+       "build-depends": [
+         "dune"
+       ]
+     },
      "fmt": {
        "version": "0.9.0",
        "src": {
@@ -43,21 +54,10 @@
          "base-unix",
          "ocaml"
        ],
-       "buildDepends": [
+       "build-depends": [
          "ocamlbuild",
          "ocamlfind",
          "topkg"
-       ]
-     },
-     "multiple-repositories": {
-       "version": "root",
-       "src": { "url": "file://." },
-       "depends": [
-         "fmt",
-         "ocaml"
-       ],
-       "buildDepends": [
-         "dune"
        ]
      },
      "ocaml": {
@@ -66,7 +66,7 @@
          "ocaml-config",
          "ocaml-system"
        ],
-       "buildDepends": [
+       "build-depends": [
          "ocaml-system"
        ]
      },
@@ -75,7 +75,7 @@
        "depends": [
          "ocaml-system"
        ],
-       "buildDepends": [
+       "build-depends": [
          "ocaml-system"
        ]
      },
@@ -115,7 +115,7 @@
          "ocaml",
          "ocamlbuild"
        ],
-       "buildDepends": [
+       "build-depends": [
          "ocamlbuild",
          "ocamlfind"
        ]

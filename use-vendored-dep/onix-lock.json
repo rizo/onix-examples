@@ -3,7 +3,7 @@
    "repositories": [
      {
        "url": "https://github.com/ocaml/opam-repository.git",
-       "rev": "f3dcd527e82e83facb92cd2727651938cb9fecf9"
+       "rev": "16930bbc587dcc61157036ef31040b5bcd3e52bc"
      }
    ],
    "packages" : {
@@ -14,15 +14,26 @@
        "version": "base"
      },
      "dune": {
-       "version": "3.4.1",
+       "version": "3.7.0",
        "src": {
-         "url": "https://github.com/ocaml/dune/releases/download/3.4.1/dune-3.4.1.tbz",
-         "sha256": "299fa33cffc108cc26ff59d5fc9d09f6cb0ab3ac280bf23a0114cfdc0b40c6c5"
+         "url": "https://github.com/ocaml/dune/releases/download/3.7.0/dune-3.7.0.tbz",
+         "sha256": "e2d637c9d080318fedf5e71d2a29fb367624f82ac4a26e83df2b3a03550528b8"
        },
        "depends": [
          "base-threads",
          "base-unix",
          "ocaml"
+       ]
+     },
+     "example": {
+       "version": "dev",
+       "src": { "url": "file://." },
+       "depends": [
+         "ocaml",
+         "pp"
+       ],
+       "build-depends": [
+         "dune"
        ]
      },
      "ocaml": {
@@ -50,16 +61,6 @@
          "ocaml-ng.ocamlPackages_4_14.ocaml"
        ]
      },
-     "ocamlfind": {
-       "version": "1.9.5",
-       "src": {
-         "url": "http://download.camlcity.org/download/findlib-1.9.5.tar.gz",
-         "sha512": "03514c618a16b02889db997c6c4789b3436b3ad7d974348d2c6dea53eb78898ab285ce5f10297c074bab4fd2c82931a8b7c5c113b994447a44abb30fca74c715"
-       },
-       "depends": [
-         "ocaml"
-       ]
-     },
      "pp": {
        "version": "dev",
        "src": { "url": "file://vendor/pp" },
@@ -68,20 +69,7 @@
          "ocaml"
        ],
        "build-depends": [
-         "dune",
-         "ocamlfind"
-       ]
-     },
-     "use-vendored-dep": {
-       "version": "dev",
-       "src": { "url": "file://." },
-       "depends": [
-         "ocaml",
-         "pp"
-       ],
-       "build-depends": [
-         "dune",
-         "ocamlfind"
+         "dune"
        ]
      }
    }
