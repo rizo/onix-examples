@@ -26,5 +26,5 @@ in onix.env {
     }
   ];
 
-  deps = { "ocaml-variants" = "5.1.0+trunk"; };
+  deps = { "ocaml-base-compiler" = "5.0.0"; };
 }
