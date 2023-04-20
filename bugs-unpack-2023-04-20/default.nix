@@ -12,4 +12,9 @@ let
 in onix.env {
   path = ./.;
   deps = { "ocaml-system" = "*"; };
+  overlay = self: super: {
+    timedesc-tzdb =
+      # https://nixos.org/manual/nixpkgs/stable/#var-stdenv-sourceRoot
+      super.timedesc-tzdb.overrideAttrs (attrs: { sourceRoot = "."; });
+  };
 }
