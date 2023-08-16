@@ -2,7 +2,7 @@
 
 let
   onix = import (builtins.fetchGit {
-    url = "https://github.com/odis-labs/onix.git";
+    url = "https://github.com/rizo/onix.git";
     rev = "2ba70cf1b11826fd4bd920269dc9613ed427febd";
   }) {
     inherit pkgs;
