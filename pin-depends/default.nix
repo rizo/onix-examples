@@ -11,13 +11,9 @@ let
 
 in onix.env {
   path = ./.;
-  repos = [
-    { url = "https://github.com/kit-ty-kate/opam-alpha-repository"; }
-    { url = "https://github.com/ocaml/ocaml-beta-repository.git"; }
-    {
-      url = "https://github.com/ocaml/opam-repository.git";
-      rev = "52c72e08d7782967837955f1c50c330a6131721f";
-    }
-  ];
+  repos = [{
+    url = "https://github.com/ocaml/opam-repository.git";
+    rev = "16930bbc587dcc61157036ef31040b5bcd3e52bc";
+  }];
   deps = { "ocaml-system" = "*"; };
 }

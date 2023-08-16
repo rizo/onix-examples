@@ -1,0 +1,26 @@
+opam-version: "2.0"
+maintainer: ["Rizo I. <rizo@odis.io>"]
+license: "ISC"
+homepage: "https://github.com/rizo/onix"
+bug-reports: "https://github.com/rizo/onix/issues"
+dev-repo: "git+https://github.com/rizo/onix.git"
+build: [
+  ["dune" "subst"] {pinned}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+depends: [
+  "ocaml" {>= "5.00" & < "6.00"}
+  "dune" {build}
+  "fmt"
+  "domainslib"
+]
