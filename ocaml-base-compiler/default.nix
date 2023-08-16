@@ -3,7 +3,7 @@
 let
   onix = import (builtins.fetchGit {
     url = "https://github.com/odis-labs/onix.git";
-    rev = "962c95978864d3b7269354fdf0c8dd548acd191a";
+    rev = "2ba70cf1b11826fd4bd920269dc9613ed427febd";
   }) {
     inherit pkgs;
     verbosity = "info";
