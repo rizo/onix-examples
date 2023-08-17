@@ -3,7 +3,7 @@
    "repositories": [
      {
        "url": "https://github.com/ocaml/opam-repository.git",
-       "rev": "249608915d9cef6fccad61219d9341d6d1b8c81e"
+       "rev": "da5da893d8148fb5c1b52b5968b90b213a481e0e"
      }
    ],
    "packages" : {
@@ -99,30 +99,30 @@
        ]
      },
      "ocaml": {
-       "version": "5.2.0",
+       "version": "5.0.0",
        "depends": [
-         "ocaml-config",
-         "ocaml-variants"
+         "ocaml-base-compiler",
+         "ocaml-config"
        ],
        "build-depends": [
-         "ocaml-variants"
+         "ocaml-base-compiler"
        ]
+     },
+     "ocaml-base-compiler": {
+       "version": "5.0.0",
+       "src": {
+         "url": "https://github.com/ocaml/ocaml/archive/5.0.0.tar.gz",
+         "sha256": "72fa3d0ba19b82fcb9e6c62e0090b9d22e5905c4be0f94faf56904a9377a9e5b"
+       }
      },
      "ocaml-config": {
        "version": "3",
        "depends": [
-         "ocaml-variants"
+         "ocaml-base-compiler"
        ],
        "build-depends": [
-         "ocaml-variants"
+         "ocaml-base-compiler"
        ]
-     },
-     "ocaml-variants": {
-       "version": "5.2.0+trunk",
-       "src": {
-         "url": "https://github.com/ocaml/ocaml/archive/trunk.tar.gz",
-         "sha256": "0dx0izprgjcjmvvpj13mvwid520vijiy2ami91xnk7i3kc6axxrg"
-       }
      },
      "ocamlbuild": {
        "version": "0.14.2",

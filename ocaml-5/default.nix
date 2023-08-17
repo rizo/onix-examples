@@ -11,5 +11,5 @@ let
 
 in onix.env {
   path = ./.;
-  deps = { "ocaml" = "5.2.0"; };
+  deps = { "ocaml-base-compiler" = "5.0.0"; };
 }
