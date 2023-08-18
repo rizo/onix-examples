@@ -3,7 +3,7 @@
    "repositories": [
      {
        "url": "https://github.com/ocaml/opam-repository.git",
-       "rev": "16930bbc587dcc61157036ef31040b5bcd3e52bc"
+       "rev": "9e6ae0a9398cf087ec2b3fbcd62cb6072ccf95ce"
      }
    ],
    "packages" : {
@@ -28,10 +28,10 @@
        ]
      },
      "dune": {
-       "version": "3.7.0",
+       "version": "3.10.0",
        "src": {
-         "url": "https://github.com/ocaml/dune/releases/download/3.7.0/dune-3.7.0.tbz",
-         "sha256": "e2d637c9d080318fedf5e71d2a29fb367624f82ac4a26e83df2b3a03550528b8"
+         "url": "https://github.com/ocaml/dune/releases/download/3.10.0/dune-3.10.0.tbz",
+         "sha256": "9ff03384a98a8df79852cc674f0b4738ba8aec17029b6e2eeb514f895e710355"
        },
        "depends": [
          "base-threads",
@@ -83,14 +83,13 @@
        ]
      },
      "jsonm": {
-       "version": "1.0.1",
+       "version": "1.0.2",
        "src": {
-         "url": "http://erratique.ch/software/jsonm/releases/jsonm-1.0.1.tbz",
-         "sha256": "1176dcmxb11fnw49b7yysvkjh0kpzx4s48lmdn5psq9vshp5c29w"
+         "url": "https://erratique.ch/software/jsonm/releases/jsonm-1.0.2.tbz",
+         "sha512": "0072f5c31080202ed1cb996a8530d72c882723f26b597f784441033f59338ba8c0cbabf901794d5b1ae749a54af4d7ebf7b47987db43488c7f6ac7fe191a042f"
        },
        "depends": [
          "ocaml",
-         "uchar",
          "uutf"
        ],
        "build-depends": [
@@ -135,10 +134,10 @@
        ]
      },
      "ocamlfind": {
-       "version": "1.9.5",
+       "version": "1.9.6",
        "src": {
-         "url": "http://download.camlcity.org/download/findlib-1.9.5.tar.gz",
-         "sha512": "03514c618a16b02889db997c6c4789b3436b3ad7d974348d2c6dea53eb78898ab285ce5f10297c074bab4fd2c82931a8b7c5c113b994447a44abb30fca74c715"
+         "url": "http://download.camlcity.org/download/findlib-1.9.6.tar.gz",
+         "sha512": "cfaf1872d6ccda548f07d32cc6b90c3aafe136d2aa6539e03143702171ee0199add55269bba894c77115535dc46a5835901a5d7c75768999e72db503bfd83027"
        },
        "depends": [
          "ocaml"
@@ -204,19 +203,6 @@
        "build-depends": [
          "ocamlbuild",
          "ocamlfind"
-       ]
-     },
-     "uchar": {
-       "version": "0.0.2",
-       "src": {
-         "url": "https://github.com/ocaml/uchar/releases/download/v0.0.2/uchar-0.0.2.tbz",
-         "sha256": "1w2saw7zanf9m9ffvz2lvcxvlm118pws2x1wym526xmydhqpyfa7"
-       },
-       "depends": [
-         "ocaml"
-       ],
-       "build-depends": [
-         "ocamlbuild"
        ]
      },
      "uutf": {

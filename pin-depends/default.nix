@@ -13,7 +13,7 @@ in onix.env {
   path = ./.;
   repos = [{
     url = "https://github.com/ocaml/opam-repository.git";
-    rev = "16930bbc587dcc61157036ef31040b5bcd3e52bc";
+    rev = "9e6ae0a9398cf087ec2b3fbcd62cb6072ccf95ce";
   }];
   deps = { "ocaml-system" = "*"; };
 }

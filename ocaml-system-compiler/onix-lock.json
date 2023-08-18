@@ -3,7 +3,7 @@
    "repositories": [
      {
        "url": "https://github.com/ocaml/opam-repository.git",
-       "rev": "249608915d9cef6fccad61219d9341d6d1b8c81e"
+       "rev": "9e6ae0a9398cf087ec2b3fbcd62cb6072ccf95ce"
      }
    ],
    "packages" : {
