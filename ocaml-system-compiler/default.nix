@@ -1,7 +1,7 @@
 let
   onix = import (builtins.fetchGit {
     url = "https://github.com/rizo/onix.git";
-    rev = "2ba70cf1b11826fd4bd920269dc9613ed427febd";
+    rev = "ec732a8cb5bd74854591a2794f9cde84d9f62e96";
   }) { verbosity = "info"; };
 
 in onix.env {
