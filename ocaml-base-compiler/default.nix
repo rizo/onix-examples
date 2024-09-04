@@ -3,7 +3,7 @@
 let
   onix = import (builtins.fetchGit {
     url = "https://github.com/rizo/onix.git";
-    rev = "ec732a8cb5bd74854591a2794f9cde84d9f62e96";
+    rev = "00720d8a87daef3bbf66eb89e2b7d8efcaf577aa";
   }) {
     inherit pkgs;
     verbosity = "info";
@@ -13,7 +13,7 @@ in onix.env {
   path = ./.;
   repos = [{
     url = "https://github.com/ocaml/opam-repository.git";
-    rev = "9e6ae0a9398cf087ec2b3fbcd62cb6072ccf95ce";
+    rev = "b239951e2279e4b35b1fcef0a4da819a409faa5d";
   }];
-  deps = { "ocaml-base-compiler" = "*"; };
+  deps = { "ocaml-base-compiler" = "5.1.1"; };
 }

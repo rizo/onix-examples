@@ -3,10 +3,25 @@
    "repositories": [
      {
        "url": "https://github.com/ocaml/opam-repository.git",
-       "rev": "9e6ae0a9398cf087ec2b3fbcd62cb6072ccf95ce"
+       "rev": "b239951e2279e4b35b1fcef0a4da819a409faa5d"
      }
    ],
    "packages" : {
+     "base-bigarray": {
+       "version": "base"
+     },
+     "base-domains": {
+       "version": "base",
+       "depends": [
+         "ocaml"
+       ]
+     },
+     "base-nnp": {
+       "version": "base",
+       "depends": [
+         "base-domains"
+       ]
+     },
      "base-threads": {
        "version": "base"
      },
@@ -14,10 +29,10 @@
        "version": "base"
      },
      "dune": {
-       "version": "3.10.0",
+       "version": "3.16.0",
        "src": {
-         "url": "https://github.com/ocaml/dune/releases/download/3.10.0/dune-3.10.0.tbz",
-         "sha256": "9ff03384a98a8df79852cc674f0b4738ba8aec17029b6e2eeb514f895e710355"
+         "url": "https://github.com/ocaml/dune/releases/download/3.16.0/dune-3.16.0.tbz",
+         "sha256": "5481dde7918ca3121e02c34d74339f734b32d5883efb8c1b8056471e74f9bda6"
        },
        "depends": [
          "base-threads",
@@ -52,8 +67,14 @@
          "topkg"
        ]
      },
+     "host-arch-x86_64": {
+       "version": "1"
+     },
+     "host-system-other": {
+       "version": "1"
+     },
      "ocaml": {
-       "version": "4.14.1",
+       "version": "5.1.1",
        "depends": [
          "ocaml-base-compiler",
          "ocaml-config"
@@ -63,14 +84,30 @@
        ]
      },
      "ocaml-base-compiler": {
-       "version": "4.14.1",
+       "version": "5.1.1",
        "src": {
-         "url": "https://github.com/ocaml/ocaml/archive/4.14.1.tar.gz",
-         "sha256": "776006e6f0b9bcfb6d9d74381c588e587432ca85562fde93bb80472a5145b028"
+         "url": "https://github.com/ocaml/ocaml/archive/5.1.1.tar.gz",
+         "sha256": "57f7b382b3d71198413ede405d95ef3506f1cdc480cda1dca1e26b37cb090e17"
+       },
+       "src-extra": {
+         "ocaml-base-compiler.install": {
+           "url": "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/ocaml-base-compiler/ocaml-base-compiler.install",
+           "sha256": "79f2a1a5044a91350a0eb6ce12e261a72a2855c094c425cddf3860e58c486678"
+         }
        }
      },
      "ocaml-config": {
-       "version": "2",
+       "version": "3",
+       "src-extra": {
+         "gen_ocaml_config.ml.in": {
+           "url": "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/ocaml-config/gen_ocaml_config.ml.in.3",
+           "sha256": "a9ad8d84a08961159653a978db92d10f694510182b206cacb96d5c9f63b5121e"
+         },
+         "ocaml-config.install": {
+           "url": "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/ocaml-config/ocaml-config.install",
+           "sha256": "6e4fd93f4cce6bad0ed3c08afd0248dbe7d7817109281de6294e5b5ef5597051"
+         }
+       },
        "depends": [
          "ocaml-base-compiler"
        ],
@@ -78,11 +115,14 @@
          "ocaml-base-compiler"
        ]
      },
+     "ocaml-options-vanilla": {
+       "version": "1"
+     },
      "ocamlbuild": {
-       "version": "0.14.2",
+       "version": "0.15.0",
        "src": {
-         "url": "https://github.com/ocaml/ocamlbuild/archive/refs/tags/0.14.2.tar.gz",
-         "sha512": "f568bf10431a1f701e8bd7554dc662400a0d978411038bbad93d44dceab02874490a8a5886a9b44e017347e7949997f13f5c3752f74e1eb5e273d2beb19a75fd"
+         "url": "https://github.com/ocaml/ocamlbuild/archive/refs/tags/0.15.0.tar.gz",
+         "sha512": "c8311a9a78491bf759eb27153d6ba4692d27cd935759a145f96a8ba8f3c2e97cef54e7d654ed1c2c07c74f60482a4fef5224e26d0f04450e69cdcb9418c762d3"
        },
        "depends": [
          "ocaml"
@@ -93,6 +133,12 @@
        "src": {
          "url": "http://download.camlcity.org/download/findlib-1.9.6.tar.gz",
          "sha512": "cfaf1872d6ccda548f07d32cc6b90c3aafe136d2aa6539e03143702171ee0199add55269bba894c77115535dc46a5835901a5d7c75768999e72db503bfd83027"
+       },
+       "src-extra": {
+         "0001-Harden-test-for-OCaml-5.patch": {
+           "url": "https://raw.githubusercontent.com/ocaml/opam-source-archives/main/patches/ocamlfind/0001-Harden-test-for-OCaml-5.patch",
+           "sha256": "6fcca5f2f7abf8d6304da6c385348584013ffb8602722a87fb0bacbab5867fe8"
+         }
        },
        "depends": [
          "ocaml"

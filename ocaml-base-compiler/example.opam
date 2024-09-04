@@ -19,7 +19,7 @@ build: [
   ]
 ]
 depends: [
-  "ocaml" {>= "4.08" & < "5.0"}
+  "ocaml"
   "dune" {>= "2.0" & build}
   "fmt"
   "odoc" {with-doc}
